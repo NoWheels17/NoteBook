@@ -25,7 +25,7 @@
 
 最开始接触的文章都是以创建一般的Android项目为基础，然后删除各种文件来满足开发Gradle插件开发的项目结构，这样方式还需要自己手动修改和配置gralde中的内容，实际上我个人觉得是走了弯路，最好的办法是使用gradle的指令来生成项目。
 
-首先新建文件夹MyPlugin，然后在 `kevinlee@KevinLeedeMacBook-Pro MyPlugin %`下键入指令 ：
+首先新建文件夹MyPlugin，然后在 `kevinlee@KevinLeedeMacBook-Pro MyPlugin %`下键入指令gradle init（我用的是7.0.2的版本，需要java11） ：
 
 ```
 Select type of project to generate:
