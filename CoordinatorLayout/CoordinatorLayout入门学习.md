@@ -23,7 +23,7 @@ Behavior 是CoordinatorLayout的灵魂所在，它指定了CoordinatorLayout的*
 
 找了一些文章，正好找到了跟现有APP首页很接近的一个布局，下面是层级图和xml布局
 
-![cengji](/cengji.png)
+![cengji](./cengji.png)
 
 xml代码：
 
@@ -100,16 +100,16 @@ xml代码：
 视图可以滚动，注意这个表示可以滚动，但是不决定滚动的过程、效果、结果，还需要跟其他标志搭配才能有具体的效果  
 
 基于案例的xml布局，我们在`AppBarLayout`的子层级下添加一个TextView，但是不设置`app:layout_scrollFlags`这个标志，用来体现设置`noScroll`和`scroll`的差别  
-![noScroll_scroll](/noScroll_scroll.gif)  
+![noScroll_scroll](./noScroll_scroll.gif)  
 从上图中可以看到设置了`scroll`的`CollapsingToolbarLayout`部分可以滚动，但是没有设置的`TextView`会有吸顶的效果，停留在顶端。
 
 - enterAlways(0x4)  
 其实这里的时候我有一些疑惑，明明这个标志位的效果要好理解一些，但是偏偏放在后面一位，所以这里先说这个标志位的效果  
-![enterAlways](/enterAlways.gif)  
+![enterAlways](./enterAlways.gif)  
 向上滚动会使头部视图完全收起；向下滚动，即使列表没有滚到第1条，头部视图也会出现
 
 - enterAlwaysCollapsed(0x2)  
-![enterAlwaysCollapsed](/enterAlwaysCollapsed.gif)  
+![enterAlwaysCollapsed](./enterAlwaysCollapsed.gif)  
 向上滚动会使头部视图完全收起；向下滚动，没有滚动到第1条时出现折叠的头部视图`Toolbar`，滚动到第1条后，再下拉会让头部视图展开。  
 折叠效果的出现，是因为`Toolbar`作为`CollapsingToolbarLayout`子视图设置了`layout_collapseMode`标签。  
 那么问题来了，折叠之后的`CollapsingToolbarLayout`高度是多少呢？  
@@ -118,11 +118,11 @@ xml代码：
 2、如果不包含，那么为`CollapsingToolbarLayout`的`minHeight`标签指定的高度
 
 - exitUntilCollapsed(0x8)  
-![enterAlwaysCollapsed](/enterAlwaysCollapsed.gif)  
+![enterAlwaysCollapsed](./enterAlwaysCollapsed.gif)  
 向上滚动会使头部视图折叠；向下滚动到第1条后，再下拉会让头部视图展开。  
 
 - snap(0x10)  
-![snap](/snap.gif)  
+![snap](./snap.gif)  
 折叠时，如果还剩少于1/4的高度时，松手会自动收起；展开时，如果还剩大于3/4的高度时，松手会自动展开。
 
 - snapMargins(0x20)  
@@ -140,9 +140,9 @@ app:expandedTitleGravity、app:expandedTitleMargin 等属性设置扩展标题�
 
 下面通过2张图来对比`parallax`和`pin`的效果，对比之前先调用`Toolbar`的`setDisplayHomeAsUpEnabled`和`setLogo`方法设置导航返回和logo。  
 *pin*   
-![pin](/pin.gif)  
+![pin](./pin.gif)  
 *parallax*  
-![parallax](/parallax.gif)  
+![parallax](./parallax.gif)  
 
 对比2张效果可以看出来设置`pin`之后导航控件会停留在顶部，直到折叠到最小才会跟随头部视图一起向上滚动到消失。
 #### layout_collapseParallaxMultiplier  
